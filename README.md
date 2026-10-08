@@ -12,6 +12,14 @@
 
 ---
 
+## Watch
+
+<p align="center">
+  <img src="docs/demo.gif" alt="editledger" width="880"/>
+</p>
+
+The clip plays on this page. [Full video](docs/demo.mp4).
+
 ## The problem
 
 Ask where a cell line came from and the answer is often a spreadsheet, a slide, and someone's memory of which parental stock was used. The guide, the editor, the parental vial, the clone pick, and the passage at edit time get separated. Six months later the record can be tidied without anyone being able to see the tidy.

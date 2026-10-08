@@ -15,10 +15,10 @@
 ## Watch
 
 <p align="center">
-  <img src="docs/demo.gif" alt="editledger" width="880"/>
+  <img src="docs/demo.gif" alt="editledger: four hashed events, then a rewritten guide breaks the chain" width="880"/>
 </p>
 
-The clip is `python -m editledger`, the program in this repository. [Full video](docs/demo.mp4).
+The clip is the working screen: the chain holds, then a rewritten guide breaks it. [Open the demo](docs/demo.html). [Full video](docs/demo.mp4).
 
 ## The problem
 

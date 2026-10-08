@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>editledger</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0e121c; color: #e6eeff; font-family: Inter, system-ui, sans-serif; }
+  body { padding: 28px 36px; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.04em; }
+  #status { margin: 0; font-size: 18px; color: #7eb6ff; }
+  #status.bad { color: #ff8f86; }
+  .chain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .event { background: #161c2a; border: 1px solid #31405e; border-radius: 18px; padding: 20px; min-height: 230px; opacity: 0; transform: translateY(10px); transition: 0.45s ease; }
+  .event.show { opacity: 1; transform: none; }
+  .event.bad { border-color: #e07a68; background: #2a1818; }
+  .k { color: #7eb6ff; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
+  h2 { margin: 10px 0; font-size: 26px; }
+  .hash { margin-top: 28px; font-family: ui-monospace, monospace; color: #9aafd4; font-size: 14px; }
+  .note { margin-top: 22px; font-size: 18px; color: #9aafd4; }
+</style>
+</head>
+<body>
+<header>
+  <h1>editledger</h1>
+  <p id="status">chain intact</p>
+</header>
+<div class="chain">
+  <article class="event" id="e1"><div class="k">01 parental stock</div><h2>HEK-P-014</h2><div class="hash">af5c308eba38</div></article>
+  <article class="event" id="e2"><div class="k">02 edit</div><h2 id="guide">guide g.12</h2><div>ABE8e</div><div class="hash">bbe37f270971</div></article>
+  <article class="event" id="e3"><div class="k">03 clone pick</div><h2>well B4</h2><div class="hash">7b518cf12144</div></article>
+  <article class="event" id="e4"><div class="k">04 passage</div><h2>passage 12</h2><div class="hash">317af3d164d7</div></article>
+</div>
+<p class="note" id="note">Each card stores the hash of the card before it.</p>
+<script>
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+async function play() {
+  await wait(600);
+  for (const id of ["e1", "e2", "e3", "e4"]) {
+    document.getElementById(id).classList.add("show");
+    await wait(700);
+  }
+  await wait(800);
+  document.getElementById("guide").textContent = "guide g.99";
+  document.getElementById("e2").classList.add("bad");
+  document.getElementById("status").textContent = "chain broken at the edit";
+  document.getElementById("status").classList.add("bad");
+  document.getElementById("note").textContent = "The guide was rewritten. The stored hash still belongs to g.12.";
+}
+</script>
+</body>
+</html>

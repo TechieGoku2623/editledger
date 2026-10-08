@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Status:** problem brief. The question and the measurement are written here. An implementation is not in this repository yet.
+**Status:** runnable on designed examples. Not a clinical system, a LIMS, or a trained model.
 
 </div>
 
@@ -18,7 +18,7 @@
   <img src="docs/demo.gif" alt="editledger" width="880"/>
 </p>
 
-The clip plays on this page. [Full video](docs/demo.mp4).
+The clip is `python -m editledger`, the program in this repository. [Full video](docs/demo.mp4).
 
 ## The problem
 
@@ -41,7 +41,17 @@ The tamper check is simple to state: recompute the chain from the first event an
 
 ## What this repository is
 
-The lineage question, beside the drift question in [editdrift](https://github.com/TechieGoku2623/editdrift). It is not a LIMS, and it does not store anyone's cells.
+`editledger` appends events and recomputes the chain. It is not a LIMS, and it does not store anyone's cells. Drift against a window is in [editdrift](https://github.com/TechieGoku2623/editdrift).
+
+## Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m editledger
+python -m unittest discover -s tests -v
+```
 
 ## Author
 

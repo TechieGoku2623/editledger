@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "editledger"
+version = "1.0.0"
+description = "Append-only lineage for an edited line, with a chain check."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Choppa Devasai Pranatheswar" }]
+dependencies = []
+
+[project.scripts]
+editledger = "editledger.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
